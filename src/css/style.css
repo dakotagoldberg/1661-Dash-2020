@@ -74,20 +74,41 @@
         background-color: #21282B;
         border-radius: .4vw;
     }
+    .status-title {
+        position: absolute;
+        font-size: 2.5vw;
+        font-weight: 700;
+        left: 1.25vw;
+        top: 1.5vw;
+    }
     .field {
         position: absolute;
         background-color: #415359;
         left: 2vw;
         top: 8vw;
-        height: 32vw;
-        width: 15vw;
+        height: 36vw;
+        width: 18vw;
+    }
+    .auto {
+        position: absolute;
+        left: 2vw;
+        top: 46vw;
+        height: 7vw;
+        width: 18vw;
     }
     .orientation {
         position: absolute;
-        left: 19vw;
+        left: 22vw;
         top: 8vw;
-        height: 15vw;
-        width: 15vw;
+        height: 20vw;
+        width: 20vw;
+    }
+    .turret {
+        position: absolute;
+        left: 22vw;
+        top: 30vw;
+        height: 23vw;
+        width: 20vw;
     }
     .encoders {
         position: absolute;
@@ -105,10 +126,10 @@
     }
     .power {
         position: absolute;
-        left: 73vw;
+        left: 71vw;
         top: 8vw;
-        height: 28vw;
-        width: 25vw;
+        height: 45vw;
+        width: 27vw;
     }
     .modes {
         position: absolute;
@@ -119,18 +140,40 @@
     }
     .pid {
         position: absolute;
-        left: 36vw;
+        left: 44vw;
         top: 38vw;
         height: 15vw;
-        width: 28vw;
+        width: 25vw;
+    }
+    .ball-count {
+        position: absolute;
+        left: 57.5vw;
+        top: 24vw;
+        height: 12vw;
+        width: 11.5vw;
+    }
+    .gear {
+        position: absolute;
+        left: 44vw;
+        top: 16vw;
+        height: 6vw;
+        width: 25vw;
+    }
+    .vision {
+        position: absolute;
+        left: 44vw;
+        top: 8vw;
+        height: 6vw;
+        width: 25vw;
     }
     .extra {
         position: absolute;
-        left: 66vw;
-        top: 38vw;
-        height: 15vw;
-        width: 32vw;
+        left: 44vw;
+        top: 24vw;
+        height: 12vw;
+        width: 11.5vw;
     }
+
     
     /*Power*/
     .bar-complex {
@@ -376,10 +419,10 @@
     /*Orientation*/
     .orientation-grid {
         position: absolute;
-        left: .5vw;
-        top: .5vw;
+        left: 1.5vw;
+        top: 1.5vw;
         height: auto;
-        width: 14vw;
+        width: 17vw;
     }
     .arrow {
         transform: rotate(0deg);
@@ -387,14 +430,33 @@
     .orientation-value {
         z-index: 0;
         position: absolute;
-        top: 13.25vw;
-        left: .5vw;
-        font-size: 1.25vw;
+        top: 17vw;
+        left: 1vw;
+        font-size: 2vw;
+    }
+
+    .orientation-name {
+        position: absolute;
+        top: 1vw;
+        left: 1vw;
+        font-size: 1.5vw;
     }
     
     .orientation-reset {
-        top: 12.5vw!IMPORTANT;
-        left: 12.6vw!IMPORTANT;
+        top: 17vw!IMPORTANT;
+        left: 17vw!IMPORTANT;
+    }
+    .turret-encoder-name {
+        position: absolute;
+        top: 20vw;
+        left: 1vw;
+        font-size: 1.5vw;
+    }
+    .turret-encoder-value {
+        position: absolute;
+        top: 20vw;
+        left: 7.5vw;
+        font-size: 1.5vw;
     }
 
     /* Robot Diagram */
@@ -621,14 +683,19 @@
 
     #middle-left-label {
         position: absolute;
-        left: 4vw;
-        top: 11.5vw;
+        left: 2vw;
+        top: 1.25vw;
     }
 
     #middle-right-label {
         position: absolute;
-        left: 22vw;
-        top: 11.5vw;
+        left: 12.5vw;
+        top: 1.25vw;
+    }
+    #alternate-mode-label {
+        position: absolute;
+        left: 2vw;
+        top: 4.25vw;
     }
 
     .switch {
@@ -689,8 +756,13 @@
     
     .toggle-group {
         position: absolute;
-        left: 11vw;
-        top: 7vw;
+        left: 4vw;
+        top: 1vw;
+    }
+    .alternate-toggle-group {
+        position: absolute;
+        left: 4vw;
+        top: 4vw;
     }
     .toggle-label {
         display: block;

@@ -22,7 +22,7 @@
     <header>
         <div id="title"> The GRIFFITRONS </div>
         <div id="subtitle"> FRC #1661 </div>
-        <div id="name">Chad</div>
+        <div id="name">Name</div>
         <div id="robot-state">ROBOT STATUS: unknown</div>
         <div id="timer">REMAINING TIME: 0:00</div>
     </header>
@@ -32,7 +32,7 @@
 
         <!-- In this prelim. HTML: Blue is 1, Red is 2 -->
 
-        <div class="gray-square top-square left-square" id="field-top-left-square"></div>
+        <!-- <div class="gray-square top-square left-square" id="field-top-left-square"></div>
         <div class="gray-square top-square middle-square" id="field-top-middle-square"></div>
         <div class="gray-square top-square right-square" id="field-top-right-square"></div>
         <div class="gray-square bottom-square left-square" id="field-bottom-left-square"><div class="square-text">L</div></div>
@@ -56,107 +56,65 @@
         <img class="automode-path" id="automode-left" src="src/img/automode-left.png">
         <img class="automode-path" id="automode-right" src="src/img/automode-right.png">
         <img class="automode-path" id="automode-middle-left" src="src/img/automode-middle-left.png">
-        <img class="automode-path" id="automode-middle-right" src="src/img/automode-middle-right.png">
+        <img class="automode-path" id="automode-middle-right" src="src/img/automode-middle-right.png"> -->
 
         
 
         
         
     </div>
+    <div class="auto box" id="auto-box">
+
+        <div class="toggle-group">
+            <!-- <div class="toggle-label">Some mode</div> -->
+            <label class="switch toggle-switch" id="switch">
+                <input id="is-right-switch" onchange='handleChange(this);' type="checkbox" class="toggle-switch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <span class="mode-label" id="middle-left-label">M Left</span>
+        <span class="mode-label" id="middle-right-label">M Right</span>
+        <div class="alternate-toggle-group">
+            <!-- <div class="toggle-label">Some mode</div> -->
+            <label class="switch toggle-switch" id="switch">
+                <input id="is-right-switch" onchange='handleChange(this);' type="checkbox" class="toggle-switch">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <span class="mode-label" id="alternate-mode-label">Mode 2</span>
+
+    </div>
     <div class="orientation box" id="orientation-box">
         
-    
         <img class="orientation-grid" src="src/img/orientation-grid.gif" id="orientation-grid">
         <img class="orientation-grid arrow" id="arrow" src="src/img/arrow.png">
         <span class="orientation-value" id="orientation-value">0˚</span>
         <div class="checka orientation-reset" id="reset-orientation">
             <i class="fas fa-undo-alt"></i>
         </div>
+        <span class="orientation-name" id="orientation-name">Gyro</span>
+
 
         
     </div>
-    <div class="encoders box" id="encoders-box">
+    <div class="turret box" id="turret-box">
         
-        <div class="encoder">
-            <div class="encoder-label">Left Drive</div>
-            <div class="encoder-val" id="left-drive-encoder-value">0.0</div>
-            <div class="checka encoder-reset" id="left-drive-reset">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        <div class="encoder">
-            <div class="encoder-label">Right Drive</div>
-            <div class="encoder-val" id="right-drive-encoder-value">0.0</div>
-            <div class="checka encoder-reset" id="right-drive-reset">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        <div class="encoder">
-            <div class="encoder-label">Intake</div>
-            <div class="encoder-val" id="intake-encoder-value">0.0</div>
-            <div class="checka encoder-reset landscape-reset" id="intake-reset">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        <div class="encoder">
-            <div class="encoder-label">Rotation</div>
-            <div class="encoder-val" id="rotation-encoder-value">0.0</div>
-            <div class="checka encoder-reset landscape-reset" id="rotation-reset">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        <div class="encoder">
-            <div class="encoder-label">Elevator</div>
-            <div class="encoder-val" id="elevator-encoder-value">0.0</div>
-            <div class="checka encoder-reset portrait-reset" id="elevator-reset">
-                <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        
-        
-        
-    </div>
     
-    <div class="diagram box">
+        <img class="orientation-grid" src="src/img/orientation-grid.gif" id="orientation-grid">
+        <img class="orientation-grid arrow" id="turret-arrow" src="src/img/arrow.png">
+        <span class="orientation-value" id="turret-value">0˚</span>
+        <div class="checka orientation-reset" id="reset-turret">
+            <i class="fas fa-undo-alt"></i>
+        </div>
+        <span class="orientation-name" id="orientation-name">Turret</span>
+        <span class="turret-encoder-name" id="turret-encoder-name">Encoder: <span id="turret-encoder-value">0.0</span> </span>
+        
 
-        <img class="robot-diagram" id="robot-diagram" src="src/img/robotdiagram.jpg">
-        <div class="diagram-bar">
-            <progress id="diagram-left-claw" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-left-claw-value"><span id="diagram-left-claw-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-right-claw" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-right-claw-value"><span id="diagram-right-claw-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-left-ball-intake" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-left-ball-intake-value"><span id="diagram-left-ball-intake-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-right-ball-intake" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-right-ball-intake-value"><span id="diagram-right-ball-intake-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-rotation" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-rotation-value"><span id="diagram-rotation-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-elevator" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-elevator-value"><span id="diagram-elevator-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-left-drive" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-left-drive-value"><span id="diagram-left-drive-val" >0.00</span></span>
-        </div>
-        <div class="diagram-bar">
-            <progress id="diagram-right-drive" value = "1" max = "2" class="bar"></progress>
-            <span class="bar-value" id="diagram-right-drive-value"><span id="diagram-right-drive-val" >0.00</span></span>
-        </div>
-
+        
     </div>
     <div class="power box" id="power-box">
         
-        <div class="bar-complex large-bar">
+        <!-- <div class="bar-complex large-bar">
             <span class="bar-text" >Battery Voltage</span>
             <progress id="voltage-bar" value = "0" max = "13" class="bar"></progress>
             <span class="bar-value" id="voltage-bar-value"><span id="voltage-bar-val" >0.00</span>V</span>
@@ -206,25 +164,24 @@
         <div class="bar-complex large-bar">
             <span class="bar-text">Temperature</span>
             <progress id="temperature" value = "0" max = "120" class="bar" id="temperature"></progress>
-                        <span id="temperature-value" class="bar-value"><span id="temperature-val" >0.00</span>˚F</span>
+                        <span id="temperature-value" class="bar-value"><span id="temperature-val" >0.00</span>˚F</span> -->
 
         </div>
     </div>
-    <div class="modes box" id="modes-box">
-    
-    <div id="console-output">
-        <div id="console-interior">
-            
-        </div>
+    <div class="vision box" id="vision-box">
+        <span class="status-title vision-status-title" id="vision-status-title">Vision: <span id="vision-status">OFF</span></span>
+    </div>
+    <div class="gear box" id="gear-box">
+        <span class="status-title gear-mode-title" id="gear-mode-title">Gear: <span id="gear-mode">NONE</span></span>
+    </div>
+    <div class="ball-count box" id="ball-count-box">
 
     </div>
+    <div class="extra box" id="pusheen-box">
 
-    <i id="light" class="fas fa-cat"></i>
-    
-    
     </div>
     <div class="pid box" id="pid-box">
-    <form class="pid-form" id="pid-general">
+    <!-- <form class="pid-form" id="pid-general">
         <div class="pid-position">
             <input id="p-val" type="text" placeholder="P" class="pid-input">
             <div class="checka cp" id="p-check">
@@ -247,25 +204,7 @@
 
     
     </form>
-            <button id = "pid-button" type="button"><div>Save Values</div></button>
-
-    </div>
-    <div class="extra box">
-    <img class="pusheen" id="left-pusheen" src="src/img/pusheen.gif">
-    <div id="middle-left-label" class="mode-label">Middle Left</div>
-    <img class="pusheen" id="right-pusheen" src="src/img/pusheen.gif">
-    <div id="middle-right-label" class="mode-label">Middle Right</div>
-
-
-
-
-    <div class="toggle-group">
-        <!-- <div class="toggle-label">Some mode</div> -->
-        <label class="switch toggle-switch" id="switch">
-            <input id="is-right-switch" onchange='handleChange(this);' type="checkbox" class="toggle-switch">
-            <span class="slider round"></span>
-        </label>
-    </div>
+            <button id = "pid-button" type="button"><div>Save Values</div></button> -->
 
     </div>
      
