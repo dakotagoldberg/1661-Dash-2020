@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+    
+  <head>
+      <!-- Starting over... with absolute positioning... we shall see how this goes... -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="src/css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+    
+    <title>Dash 2019</title>
+  </head>
+    
+<style>
+
+    </style>
+    
+    
+<body onload="onStart();">
+
+    <header>
+        <div id="title"> The GRIFFITRONS </div>
+        <div id="subtitle"> FRC #1661 </div>
+        <div id="name">Chad</div>
+        <div id="robot-state">ROBOT STATUS: unknown</div>
+        <div id="timer">REMAINING TIME: 0:00</div>
+    </header>
+
+
+    <div class="field box" id="field-box">
+
+        <!-- In this prelim. HTML: Blue is 1, Red is 2 -->
+
+        <div class="gray-square top-square left-square" id="field-top-left-square"></div>
+        <div class="gray-square top-square middle-square" id="field-top-middle-square"></div>
+        <div class="gray-square top-square right-square" id="field-top-right-square"></div>
+        <div class="gray-square bottom-square left-square" id="field-bottom-left-square"><div class="square-text">L</div></div>
+        <div class="gray-square bottom-square middle-square" id="field-bottom-middle-square"><div class="square-text">M</div></div>
+        <div class="gray-square bottom-square right-square" id="field-bottom-right-square"><div class="square-text">R</div></div>
+        <div class="blue-line top-blue-line" id="field-top-line-1"></div>
+        <div class="blue-line bottom-blue-line" id="field-bottom-line-1"></div>
+        <div class="red-line top-red-line" id="field-top-line-2"></div>
+        <div class="red-line bottom-red-line" id="field-bottom-line-2"></div>
+    
+        <div class="left blue rocket color-blue" id="field-left-rocket-1"></div>
+        <div class="right blue rocket color-blue" id="field-right-rocket-1"></div>
+        <div class="left red rocket color-red" id="field-left-rocket-2"></div>
+        <div class="right red rocket color-red" id="field-right-rocket-2"></div>
+        <div class="cargo-stations" id="cargo-stations">
+        
+        <div class="red-cargo cargo color-red" id="field-cargo-1"></div>
+            <div class="blue-cargo cargo color-blue" id="field-cargo-2"></div>
+        </div>
+
+        <img class="automode-path" id="automode-left" src="src/img/automode-left.png">
+        <img class="automode-path" id="automode-right" src="src/img/automode-right.png">
+        <img class="automode-path" id="automode-middle-left" src="src/img/automode-middle-left.png">
+        <img class="automode-path" id="automode-middle-right" src="src/img/automode-middle-right.png">
+
+        
+
+        
+        
+    </div>
+    <div class="orientation box" id="orientation-box">
+        
+    
+        <img class="orientation-grid" src="src/img/orientation-grid.gif" id="orientation-grid">
+        <img class="orientation-grid arrow" id="arrow" src="src/img/arrow.png">
+        <span class="orientation-value" id="orientation-value">0˚</span>
+        <div class="checka orientation-reset" id="reset-orientation">
+            <i class="fas fa-undo-alt"></i>
+        </div>
+
+        
+    </div>
+    <div class="encoders box" id="encoders-box">
+        
+        <div class="encoder">
+            <div class="encoder-label">Left Drive</div>
+            <div class="encoder-val" id="left-drive-encoder-value">0.0</div>
+            <div class="checka encoder-reset" id="left-drive-reset">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+        </div>
+        <div class="encoder">
+            <div class="encoder-label">Right Drive</div>
+            <div class="encoder-val" id="right-drive-encoder-value">0.0</div>
+            <div class="checka encoder-reset" id="right-drive-reset">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+        </div>
+        <div class="encoder">
+            <div class="encoder-label">Intake</div>
+            <div class="encoder-val" id="intake-encoder-value">0.0</div>
+            <div class="checka encoder-reset landscape-reset" id="intake-reset">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+        </div>
+        <div class="encoder">
+            <div class="encoder-label">Rotation</div>
+            <div class="encoder-val" id="rotation-encoder-value">0.0</div>
+            <div class="checka encoder-reset landscape-reset" id="rotation-reset">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+        </div>
+        <div class="encoder">
+            <div class="encoder-label">Elevator</div>
+            <div class="encoder-val" id="elevator-encoder-value">0.0</div>
+            <div class="checka encoder-reset portrait-reset" id="elevator-reset">
+                <i class="fas fa-undo-alt"></i>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+    
+    <div class="diagram box">
+
+        <img class="robot-diagram" id="robot-diagram" src="src/img/robotdiagram.jpg">
+        <div class="diagram-bar">
+            <progress id="diagram-left-claw" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-left-claw-value"><span id="diagram-left-claw-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-right-claw" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-right-claw-value"><span id="diagram-right-claw-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-left-ball-intake" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-left-ball-intake-value"><span id="diagram-left-ball-intake-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-right-ball-intake" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-right-ball-intake-value"><span id="diagram-right-ball-intake-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-rotation" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-rotation-value"><span id="diagram-rotation-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-elevator" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-elevator-value"><span id="diagram-elevator-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-left-drive" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-left-drive-value"><span id="diagram-left-drive-val" >0.00</span></span>
+        </div>
+        <div class="diagram-bar">
+            <progress id="diagram-right-drive" value = "1" max = "2" class="bar"></progress>
+            <span class="bar-value" id="diagram-right-drive-value"><span id="diagram-right-drive-val" >0.00</span></span>
+        </div>
+
+    </div>
+    <div class="power box" id="power-box">
+        
+        <div class="bar-complex large-bar">
+            <span class="bar-text" >Battery Voltage</span>
+            <progress id="voltage-bar" value = "0" max = "13" class="bar"></progress>
+            <span class="bar-value" id="voltage-bar-value"><span id="voltage-bar-val" >0.00</span>V</span>
+        </div>
+        <div class="bar-complex large-bar">
+            <span class="bar-text">Total Power Draw</span>
+            <progress id="total-draw" value = "0" max = "1037" class="bar"></progress>
+                        <span id="total-draw-value" class="bar-value"><span id="total-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Drive Train</span>
+            <progress id="drive-train" value = "0" max = "532" class="bar"></progress>
+                        <span id="drive-train-value" class="bar-value"><span id="drive-train-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Intake</span>
+            <progress id="intake-draw" value = "0" max = "106" class="bar"></progress>
+                        <span id="intake-draw-value" class="bar-value"><span id="intake-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Intake Pivot</span>
+            <progress id="intake-pivot-draw" value = "0" max = "133" class="bar"></progress>
+                        <span id="intake-pivot-draw-value" class="bar-value"><span id="intake-pivot-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Elevator</span>
+            <progress id="elevator-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="elevator-draw-value" class="bar-value"><span id="elevator-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex large-bar">
+            <span class="bar-text">Velocity</span>
+            <progress id="velocity" value = "0" max = "50" class="bar"></progress>
+                        <span id="velocity-value" class="bar-value"><span id="velocity-val" >0.00</span>m/s</span>
+
+        </div>
+        <div class="bar-complex large-bar">
+            <span class="bar-text">Acceleration</span>
+            <progress id="acceleration" value = "0" max = "50" class="bar"></progress>
+                        <span id="acceleration-value" class="bar-value"><span id="acceleration-val" >0.00</span>m/s²</span>
+
+        </div>
+        <div class="bar-complex large-bar">
+            <span class="bar-text">Temperature</span>
+            <progress id="temperature" value = "0" max = "120" class="bar" id="temperature"></progress>
+                        <span id="temperature-value" class="bar-value"><span id="temperature-val" >0.00</span>˚F</span>
+
+        </div>
+    </div>
+    <div class="modes box" id="modes-box">
+    
+    <div id="console-output">
+        <div id="console-interior">
+            
+        </div>
+
+    </div>
+
+    <i id="light" class="fas fa-cat"></i>
+    
+    
+    </div>
+    <div class="pid box" id="pid-box">
+    <form class="pid-form" id="pid-general">
+        <div class="pid-position">
+            <input id="p-val" type="text" placeholder="P" class="pid-input">
+            <div class="checka cp" id="p-check">
+            <i class="fas fa-check"></i>
+            </div>
+        </div>
+        <div class="pid-position">
+            <input id="i-val" type="text" placeholder="I" class="pid-input">
+            <div class="checka ci" id="i-check">
+            <i class="fas fa-check"></i>
+            </div>
+        </div>
+        <div class="pid-position">
+            <input id="d-val" type="text" placeholder="D" class="pid-input">
+            <div class="checka cd" id="d-check">
+            <i class="fas fa-check"></i>
+            </div>
+        </div>
+        
+
+    
+    </form>
+            <button id = "pid-button" type="button"><div>Save Values</div></button>
+
+    </div>
+    <div class="extra box">
+    <img class="pusheen" id="left-pusheen" src="src/img/pusheen.gif">
+    <div id="middle-left-label" class="mode-label">Middle Left</div>
+    <img class="pusheen" id="right-pusheen" src="src/img/pusheen.gif">
+    <div id="middle-right-label" class="mode-label">Middle Right</div>
+
+
+
+
+    <div class="toggle-group">
+        <!-- <div class="toggle-label">Some mode</div> -->
+        <label class="switch toggle-switch" id="switch">
+            <input id="is-right-switch" onchange='handleChange(this);' type="checkbox" class="toggle-switch">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+    </div>
+     
+      
+      
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <div id="login">
+        <input id="connect-address" type="text" value="localhost" disabled>
+        <button id="connect" disabled>Connecting</button>
+    </div> -->
+
+
+    <script>
+
+    var myDiv = document.getElementById("console-output");
+    myDiv.scrollTop = myDiv.scrollHeight;
+
+
+    </script>
+
+    
+  <script src="src/networktables/networktables.js"></script>
+  <script src="src/connection.js"></script>
+  <script src="src/ui.js"></script>
+  </body>
+    
+    
+</html>
