@@ -201,8 +201,8 @@
         box-shadow: 0 0 1.2vw rgba(0, 0, 0, .75);
     }
     .large-bar progress {
-        width: 16.5vw;
-        height: 1.25vw;
+        width: 19vw;
+        height: 1.5vw;
     }
     .large-bar {
         font-size: 1vw;
@@ -211,8 +211,8 @@
         font-size: 1vw;
     }
     .small-bar progress {
-        width: 14vw;
-        height: 1vw;
+        width: 16.5vw;
+        height: 1.25vw;
     }
     .small-bar {
         margin-left: 4.5vw;

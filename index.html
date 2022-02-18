@@ -114,7 +114,7 @@
     </div>
     <div class="power box" id="power-box">
         
-        <!-- <div class="bar-complex large-bar">
+        <div class="bar-complex large-bar">
             <span class="bar-text" >Battery Voltage</span>
             <progress id="voltage-bar" value = "0" max = "13" class="bar"></progress>
             <span class="bar-value" id="voltage-bar-value"><span id="voltage-bar-val" >0.00</span>V</span>
@@ -138,35 +138,48 @@
 
         </div>
         <div class="bar-complex small-bar">
-            <span class="bar-text">Intake Pivot</span>
-            <progress id="intake-pivot-draw" value = "0" max = "133" class="bar"></progress>
-                        <span id="intake-pivot-draw-value" class="bar-value"><span id="intake-pivot-draw-val" >0.00</span>A</span>
+            <span class="bar-text">Shooter</span>
+            <progress id="shooter-draw" value = "0" max = "133" class="bar"></progress>
+                        <span id="shooter-draw-value" class="bar-value"><span id="shooter-pivot-draw-val" >0.00</span>A</span>
 
         </div>
         <div class="bar-complex small-bar">
-            <span class="bar-text">Elevator</span>
-            <progress id="elevator-draw" value = "0" max = "266" class="bar"></progress>
-                        <span id="elevator-draw-value" class="bar-value"><span id="elevator-draw-val" >0.00</span>A</span>
+            <span class="bar-text">Turret</span>
+            <progress id="turret-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="turret-draw-value" class="bar-value"><span id="turret-draw-val" >0.00</span>A</span>
 
         </div>
-        <div class="bar-complex large-bar">
-            <span class="bar-text">Velocity</span>
-            <progress id="velocity" value = "0" max = "50" class="bar"></progress>
-                        <span id="velocity-value" class="bar-value"><span id="velocity-val" >0.00</span>m/s</span>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Horizontal Agitator</span>
+            <progress id="horizontal-agitator-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="horizontal-agitator-draw-value" class="bar-value"><span id="horizontal-agitator-draw-val" >0.00</span>A</span>
 
         </div>
-        <div class="bar-complex large-bar">
-            <span class="bar-text">Acceleration</span>
-            <progress id="acceleration" value = "0" max = "50" class="bar"></progress>
-                        <span id="acceleration-value" class="bar-value"><span id="acceleration-val" >0.00</span>m/s²</span>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Vertical Agitator</span>
+            <progress id="vertical-agitator-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="vertical-agitator-draw-value" class="bar-value"><span id="vertical-agitator-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Climb</span>
+            <progress id="climb-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="climb-draw-value" class="bar-value"><span id="climb-draw-val" >0.00</span>A</span>
+
+        </div>
+        <div class="bar-complex small-bar">
+            <span class="bar-text">Color Wheel</span>
+            <progress id="color-wheel-draw" value = "0" max = "266" class="bar"></progress>
+                        <span id="color-wheel-draw-value" class="bar-value"><span id="color-wheel-draw-val" >0.00</span>A</span>
 
         </div>
         <div class="bar-complex large-bar">
             <span class="bar-text">Temperature</span>
             <progress id="temperature" value = "0" max = "120" class="bar" id="temperature"></progress>
-                        <span id="temperature-value" class="bar-value"><span id="temperature-val" >0.00</span>˚F</span> -->
+                        <span id="temperature-value" class="bar-value"><span id="temperature-val" >0.00</span>˚F</span>
 
         </div>
+      
     </div>
     <div class="vision box" id="vision-box">
         <span class="status-title vision-status-title" id="vision-status-title">Vision: <span id="vision-status">OFF</span></span>
